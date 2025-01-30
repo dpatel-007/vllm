@@ -34,9 +34,9 @@ for backend in backend_type.split(','):
     " chicken soup for a family of four.", "Hello",
     "What is the weather today like?", "Who are you?"
 ]])
-# @pytest.mark.parametrize("warmup_shape", [(64, 20, 4), (64, 20, 8),
-#                                           (128, 20, 4), (128, 20, 8)]
-@pytest.mark.parametrize("warmup_shape", [(64, 20, 1), (128, 20, 1)]
+@pytest.mark.parametrize("warmup_shape", [(64, 20, 4), (64, 20, 8),
+                                          (128, 20, 4), (128, 20, 8)]
+# @pytest.mark.parametrize("warmup_shape", [(64, 20, 1), (128, 20, 1)]
                          )  # (prompt_length/new_tokens/batch_size)
 @pytest.mark.parametrize("backend",
                          test_backend_list)  #, "inductor", "sendnn_decoder"])

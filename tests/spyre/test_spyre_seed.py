@@ -35,10 +35,8 @@ for backend in backend_type.split(','):
 ])
 @pytest.mark.parametrize("temperature", [0.1, 1.0])
 @pytest.mark.parametrize("seed", [42])
-# @pytest.mark.parametrize("warmup_shape", [(64, 20, 4), (64, 20, 8),
-#                                           (128, 20, 4), (128, 20, 8)]
-#                          )  # (prompt_length/new_tokens/batch_size)
-@pytest.mark.parametrize("warmup_shape", [(64, 20, 1), (128, 20, 1)]
+@pytest.mark.parametrize("warmup_shape", [(64, 20, 4), (64, 20, 8),
+                                          (128, 20, 4), (128, 20, 8)]
                          )  # (prompt_length/new_tokens/batch_size)
 @pytest.mark.parametrize("backend",
                          test_backend_list)  #, "inductor", "sendnn_decoder"])

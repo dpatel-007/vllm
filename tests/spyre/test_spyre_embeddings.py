@@ -25,7 +25,6 @@ for model in user_test_model_list.split(','):
 for backend in backend_type.split(','):
     test_backend_list.append(backend.strip())
 
-@pytest.mark.skip("Skip until failure is resolved.")
 @pytest.mark.parametrize("model", test_model_list)
 @pytest.mark.parametrize("prompts", [[
     "The capital of France is Paris."
