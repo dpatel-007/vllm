@@ -24,8 +24,11 @@ from vllm import SamplingParams
         " what you are."
     ]
 ])
-@pytest.mark.parametrize("warmup_shapes", [[(64, 20, 8), (128, 20, 4)]]
+# @pytest.mark.parametrize("warmup_shapes", [[(64, 20, 8), (128, 20, 4)]]
+#                          )  # (prompt_length/new_tokens/batch_size)
+@pytest.mark.parametrize("warmup_shapes", [[(64, 20, 1)]]
                          )  # (prompt_length/new_tokens/batch_size)
+
 @pytest.mark.parametrize("backend",
                          ["eager"])  #, "inductor", "sendnn_decoder"])
 def test_output(

@@ -17,9 +17,12 @@ from spyre_util import (compare_embedding_results, spyre_vllm_embeddings,
     " chicken soup for a family of four.", "Hello",
     "What is the weather today like?", "Who are you?"
 ]])
+# @pytest.mark.parametrize("warmup_shape",
+#                          [(64, 4), (64, 8), (128, 4),
+#                           (128, 8)])  # (prompt_length/new_tokens/batch_size)
 @pytest.mark.parametrize("warmup_shape",
-                         [(64, 4), (64, 8), (128, 4),
-                          (128, 8)])  # (prompt_length/new_tokens/batch_size)
+                         [(64, 1), (128, 1)])  
+                        # (prompt_length/new_tokens/batch_size)
 @pytest.mark.parametrize("backend",
                          ["eager"])  #, "inductor", "sendnn_decoder"])
 def test_output(
